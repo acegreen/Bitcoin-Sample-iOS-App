@@ -8,7 +8,7 @@ PS I was not selected to proceed further based on this. Request for additional f
 
 ## Screenshots
 
-![alt tag](https://cloud.githubusercontent.com/assets/10794609/17078065/6be85364-50b6-11e6-9156-3023d8f2c1b0.png) ![alt tag](https://cloud.githubusercontent.com/assets/10794609/17078064/6be7b454-50b6-11e6-999e-cf6e49ab634e.png)
+![alt tag](https://cloud.githubusercontent.com/assets/10794609/17078200/ae822d86-50ba-11e6-9fd0-269aeb6e9674.png) ![alt tag](https://cloud.githubusercontent.com/assets/10794609/17078201/ae825702-50ba-11e6-921d-99560b85f1f0.png)
 
 ## Test
 
