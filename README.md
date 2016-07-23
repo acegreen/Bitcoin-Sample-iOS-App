@@ -1,4 +1,4 @@
-https://cloud.githubusercontent.com/assets/10794609/17078156/2fa3dc68-50b9-11e6-9507-9f4245262c43.png
+![alt tag](https://cloud.githubusercontent.com/assets/10794609/17078156/2fa3dc68-50b9-11e6-9507-9f4245262c43.png)
 
 ## About
 
@@ -8,7 +8,7 @@ PS I was not selected to proceed further based on this. Request for additional f
 
 ## Screenshots
 
-https://cloud.githubusercontent.com/assets/10794609/17078065/6be85364-50b6-11e6-9156-3023d8f2c1b0.png https://cloud.githubusercontent.com/assets/10794609/17078064/6be7b454-50b6-11e6-999e-cf6e49ab634e.png
+![alt tag](https://cloud.githubusercontent.com/assets/10794609/17078065/6be85364-50b6-11e6-9156-3023d8f2c1b0.png) ![alt tag](https://cloud.githubusercontent.com/assets/10794609/17078064/6be7b454-50b6-11e6-999e-cf6e49ab634e.png)
 
 ## Test
 
