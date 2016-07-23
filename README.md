@@ -8,7 +8,9 @@ PS I was not selected to proceed further based on this. Request for additional f
 
 ## Screenshots
 
-![alt tag](https://cloud.githubusercontent.com/assets/10794609/17078286/9b2ff3d8-50bc-11e6-8e7f-4a343fd55660.png) ![alt tag](https://cloud.githubusercontent.com/assets/10794609/17078285/9b2fa1da-50bc-11e6-894e-77aca1918978.png)
+iPad                                                                                                              |  iPhone
+:----------------------------------------------------------------------------------------------------------------:|:----------------------------------------------------------------------------------------------------------------:
+![alt tag](https://cloud.githubusercontent.com/assets/10794609/17078286/9b2ff3d8-50bc-11e6-8e7f-4a343fd55660.png) | ![alt tag](https://cloud.githubusercontent.com/assets/10794609/17078285/9b2fa1da-50bc-11e6-894e-77aca1918978.png)
 
 ## Test
 
