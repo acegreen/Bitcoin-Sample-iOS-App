@@ -1,0 +1,401 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2310163A1D37EE9C0061FADB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231016391D37EE9C0061FADB /* AppDelegate.swift */; };
+		2310163C1D37EE9C0061FADB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2310163B1D37EE9C0061FADB /* ViewController.swift */; };
+		2310163F1D37EE9C0061FADB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2310163D1D37EE9C0061FADB /* Main.storyboard */; };
+		231016411D37EE9C0061FADB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 231016401D37EE9C0061FADB /* Assets.xcassets */; };
+		231016441D37EE9C0061FADB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 231016421D37EE9C0061FADB /* LaunchScreen.storyboard */; };
+		2310164E1D37F84D0061FADB /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2310164D1D37F84D0061FADB /* Extensions.swift */; };
+		231016531D37FFC80061FADB /* QueryHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231016521D37FFC80061FADB /* QueryHelper.swift */; };
+		231016551D38000E0061FADB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231016541D38000E0061FADB /* Constants.swift */; };
+		F0A9E2742F36C9AFA2083F43 /* Pods_BitLive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 180D46B91468489162007934 /* Pods_BitLive.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1084EB974D38A0158BD8593F /* Pods-BitLive.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BitLive.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BitLive/Pods-BitLive.debug.xcconfig"; sourceTree = "<group>"; };
+		180D46B91468489162007934 /* Pods_BitLive.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BitLive.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		231016361D37EE9C0061FADB /* BitLive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BitLive.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		231016391D37EE9C0061FADB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2310163B1D37EE9C0061FADB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2310163E1D37EE9C0061FADB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		231016401D37EE9C0061FADB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		231016431D37EE9C0061FADB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		231016451D37EE9C0061FADB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2310164D1D37F84D0061FADB /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		231016521D37FFC80061FADB /* QueryHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryHelper.swift; sourceTree = "<group>"; };
+		231016541D38000E0061FADB /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		3F6C2AD5FBAE6D78EEACA917 /* Pods-BitLive.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BitLive.release.xcconfig"; path = "Pods/Target Support Files/Pods-BitLive/Pods-BitLive.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		231016331D37EE9C0061FADB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0A9E2742F36C9AFA2083F43 /* Pods_BitLive.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2310162D1D37EE9C0061FADB = {
+			isa = PBXGroup;
+			children = (
+				231016381D37EE9C0061FADB /* BitLive */,
+				231016371D37EE9C0061FADB /* Products */,
+				704DA8FF2471ACB5AE0A2ECE /* Pods */,
+				B75A799B07A81E4BF4B411AB /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		231016371D37EE9C0061FADB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				231016361D37EE9C0061FADB /* BitLive.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		231016381D37EE9C0061FADB /* BitLive */ = {
+			isa = PBXGroup;
+			children = (
+				2310164C1D37F8320061FADB /* General */,
+				2310164B1D37EFF20061FADB /* Storyboards */,
+				2310163B1D37EE9C0061FADB /* ViewController.swift */,
+				231016391D37EE9C0061FADB /* AppDelegate.swift */,
+				231016401D37EE9C0061FADB /* Assets.xcassets */,
+				231016451D37EE9C0061FADB /* Info.plist */,
+			);
+			path = BitLive;
+			sourceTree = "<group>";
+		};
+		2310164B1D37EFF20061FADB /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				2310163D1D37EE9C0061FADB /* Main.storyboard */,
+				231016421D37EE9C0061FADB /* LaunchScreen.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		2310164C1D37F8320061FADB /* General */ = {
+			isa = PBXGroup;
+			children = (
+				231016541D38000E0061FADB /* Constants.swift */,
+				2310164D1D37F84D0061FADB /* Extensions.swift */,
+				231016521D37FFC80061FADB /* QueryHelper.swift */,
+			);
+			name = General;
+			sourceTree = "<group>";
+		};
+		704DA8FF2471ACB5AE0A2ECE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1084EB974D38A0158BD8593F /* Pods-BitLive.debug.xcconfig */,
+				3F6C2AD5FBAE6D78EEACA917 /* Pods-BitLive.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B75A799B07A81E4BF4B411AB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				180D46B91468489162007934 /* Pods_BitLive.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		231016351D37EE9C0061FADB /* BitLive */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 231016481D37EE9C0061FADB /* Build configuration list for PBXNativeTarget "BitLive" */;
+			buildPhases = (
+				225322028314076386ACBD95 /* [CP] Check Pods Manifest.lock */,
+				231016321D37EE9C0061FADB /* Sources */,
+				231016331D37EE9C0061FADB /* Frameworks */,
+				231016341D37EE9C0061FADB /* Resources */,
+				6112C9FE16080DF8683B9A7D /* [CP] Embed Pods Frameworks */,
+				D20F35E9A1725C1261764E27 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BitLive;
+			productName = BitLive;
+			productReference = 231016361D37EE9C0061FADB /* BitLive.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2310162E1D37EE9C0061FADB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Ace Green";
+				TargetAttributes = {
+					231016351D37EE9C0061FADB = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+				};
+			};
+			buildConfigurationList = 231016311D37EE9C0061FADB /* Build configuration list for PBXProject "BitLive" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2310162D1D37EE9C0061FADB;
+			productRefGroup = 231016371D37EE9C0061FADB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				231016351D37EE9C0061FADB /* BitLive */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		231016341D37EE9C0061FADB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				231016441D37EE9C0061FADB /* LaunchScreen.storyboard in Resources */,
+				231016411D37EE9C0061FADB /* Assets.xcassets in Resources */,
+				2310163F1D37EE9C0061FADB /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		225322028314076386ACBD95 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		6112C9FE16080DF8683B9A7D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BitLive/Pods-BitLive-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D20F35E9A1725C1261764E27 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BitLive/Pods-BitLive-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		231016321D37EE9C0061FADB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				231016551D38000E0061FADB /* Constants.swift in Sources */,
+				2310163C1D37EE9C0061FADB /* ViewController.swift in Sources */,
+				2310164E1D37F84D0061FADB /* Extensions.swift in Sources */,
+				231016531D37FFC80061FADB /* QueryHelper.swift in Sources */,
+				2310163A1D37EE9C0061FADB /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		2310163D1D37EE9C0061FADB /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2310163E1D37EE9C0061FADB /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		231016421D37EE9C0061FADB /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				231016431D37EE9C0061FADB /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		231016461D37EE9C0061FADB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		231016471D37EE9C0061FADB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		231016491D37EE9C0061FADB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1084EB974D38A0158BD8593F /* Pods-BitLive.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = BitLive/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = AG.BitLive;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2310164A1D37EE9C0061FADB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3F6C2AD5FBAE6D78EEACA917 /* Pods-BitLive.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = BitLive/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = AG.BitLive;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		231016311D37EE9C0061FADB /* Build configuration list for PBXProject "BitLive" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				231016461D37EE9C0061FADB /* Debug */,
+				231016471D37EE9C0061FADB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		231016481D37EE9C0061FADB /* Build configuration list for PBXNativeTarget "BitLive" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				231016491D37EE9C0061FADB /* Debug */,
+				2310164A1D37EE9C0061FADB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2310162E1D37EE9C0061FADB /* Project object */;
+}

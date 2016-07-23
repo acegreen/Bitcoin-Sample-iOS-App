@@ -1,0 +1,6 @@
+framework module Pods_BitLive {
+  umbrella header "Pods-BitLive-umbrella.h"
+
+  export *
+  module * { export * }
+}

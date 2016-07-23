@@ -1,0 +1,32 @@
+PODS:
+  - Charts (2.2.5):
+    - Charts/Core (= 2.2.5)
+  - Charts/Core (2.2.5)
+  - DataCache (1.0)
+  - LTMorphingLabel (0.2.1)
+  - SwiftyJSON (2.3.2)
+
+DEPENDENCIES:
+  - Charts
+  - DataCache (from `https://github.com/huynguyencong/DataCache.git`)
+  - LTMorphingLabel
+  - SwiftyJSON
+
+EXTERNAL SOURCES:
+  DataCache:
+    :git: https://github.com/huynguyencong/DataCache.git
+
+CHECKOUT OPTIONS:
+  DataCache:
+    :commit: 1addcc76a98cdda6ff4b64630397a4c289f77349
+    :git: https://github.com/huynguyencong/DataCache.git
+
+SPEC CHECKSUMS:
+  Charts: b48fcc8d7190de910ff9e9748f5360c8ea7856e5
+  DataCache: d9dc2b3f77dca0067c93bd481a1a10b9d60d0b1d
+  LTMorphingLabel: 1858358ea38ef4d548e1f58b648b0d08ec3a62ed
+  SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
+
+PODFILE CHECKSUM: c81a9a2148d6e19a8793228a50fe72d5fb40a4c0
+
+COCOAPODS: 1.0.1

@@ -1,0 +1,6 @@
+framework module DataCache {
+  umbrella header "DataCache-umbrella.h"
+
+  export *
+  module * { export * }
+}
