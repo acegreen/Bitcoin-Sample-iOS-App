@@ -1,6 +1,6 @@
 ![alt tag](https://cloud.githubusercontent.com/assets/10794609/17078241/61ab4c6c-50bb-11e6-9fd9-8a39498c4aa8.png)
 
-## About
+## BitLive
 
 This sample app was created when I received a test challenge to complete. My focus was on details and to avoid reinventing the wheel unless neccessary. I took advantage of 3 mainstream libraries to complete the task and focused my attention to the design and details such as color theme, animating the label the displays current value, creating a catchy icon.
 
