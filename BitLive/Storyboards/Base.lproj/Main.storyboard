@@ -37,10 +37,6 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OSt-Zj-h2n" customClass="LineChartView" customModule="Charts">
-                                <rect key="frame" x="0.0" y="328" width="600" height="272"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                            </view>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$ 0.00 (0.00%)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yri-Xc-w0g">
                                 <rect key="frame" x="241" y="197" width="117.5" height="21"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
@@ -62,6 +58,10 @@
                                     <action selector="currencySegmentedControl:" destination="BYZ-38-t0r" eventType="valueChanged" id="XsN-Xb-ihf"/>
                                 </connections>
                             </segmentedControl>
+                            <view contentMode="scaleToFill" restorationIdentifier="LineChartView" translatesAutoresizingMaskIntoConstraints="NO" id="OSt-Zj-h2n" customClass="LineChartView" customModule="Charts">
+                                <rect key="frame" x="0.0" y="328" width="600" height="272"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.96078431610000004" green="0.75294119120000003" blue="0.094117648900000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>

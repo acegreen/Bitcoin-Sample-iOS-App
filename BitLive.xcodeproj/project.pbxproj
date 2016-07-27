@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		230D066D1D49075200820E97 /* BitLiveUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230D066C1D49075200820E97 /* BitLiveUITests.swift */; };
 		235A70FF1D48D39B00E5D105 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 235A70F01D48D39B00E5D105 /* Assets.xcassets */; };
 		235A71001D48D39B00E5D105 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235A70F21D48D39B00E5D105 /* AppDelegate.swift */; };
 		235A71021D48D39B00E5D105 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235A70F51D48D39B00E5D105 /* Constants.swift */; };
@@ -20,6 +21,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		230D066F1D49075200820E97 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2310162E1D37EE9C0061FADB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 231016351D37EE9C0061FADB;
+			remoteInfo = BitLive;
+		};
 		235A71111D48D5A600E5D105 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 2310162E1D37EE9C0061FADB /* Project object */;
@@ -32,6 +40,9 @@
 /* Begin PBXFileReference section */
 		1084EB974D38A0158BD8593F /* Pods-BitLive.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BitLive.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BitLive/Pods-BitLive.debug.xcconfig"; sourceTree = "<group>"; };
 		180D46B91468489162007934 /* Pods_BitLive.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BitLive.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		230D066A1D49075200820E97 /* BitLiveUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BitLiveUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		230D066C1D49075200820E97 /* BitLiveUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitLiveUITests.swift; sourceTree = "<group>"; };
+		230D066E1D49075200820E97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		231016361D37EE9C0061FADB /* BitLive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BitLive.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		235A70F01D48D39B00E5D105 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		235A70F21D48D39B00E5D105 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -50,6 +61,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		230D06671D49075200820E97 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		231016331D37EE9C0061FADB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -68,11 +86,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		230D066B1D49075200820E97 /* BitLiveUITests */ = {
+			isa = PBXGroup;
+			children = (
+				230D066C1D49075200820E97 /* BitLiveUITests.swift */,
+				230D066E1D49075200820E97 /* Info.plist */,
+			);
+			path = BitLiveUITests;
+			sourceTree = "<group>";
+		};
 		2310162D1D37EE9C0061FADB = {
 			isa = PBXGroup;
 			children = (
 				231016381D37EE9C0061FADB /* BitLive */,
 				235A710D1D48D5A600E5D105 /* BitLiveTests */,
+				230D066B1D49075200820E97 /* BitLiveUITests */,
 				231016371D37EE9C0061FADB /* Products */,
 				704DA8FF2471ACB5AE0A2ECE /* Pods */,
 				B75A799B07A81E4BF4B411AB /* Frameworks */,
@@ -84,6 +112,7 @@
 			children = (
 				231016361D37EE9C0061FADB /* BitLive.app */,
 				235A710C1D48D5A600E5D105 /* BitLiveTests.xctest */,
+				230D066A1D49075200820E97 /* BitLiveUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -166,6 +195,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		230D06691D49075200820E97 /* BitLiveUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 230D06731D49075200820E97 /* Build configuration list for PBXNativeTarget "BitLiveUITests" */;
+			buildPhases = (
+				230D06661D49075200820E97 /* Sources */,
+				230D06671D49075200820E97 /* Frameworks */,
+				230D06681D49075200820E97 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				230D06701D49075200820E97 /* PBXTargetDependency */,
+			);
+			name = BitLiveUITests;
+			productName = BitLiveUITests;
+			productReference = 230D066A1D49075200820E97 /* BitLiveUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		231016351D37EE9C0061FADB /* BitLive */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 231016481D37EE9C0061FADB /* Build configuration list for PBXNativeTarget "BitLive" */;
@@ -214,6 +261,10 @@
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "Ace Green";
 				TargetAttributes = {
+					230D06691D49075200820E97 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 231016351D37EE9C0061FADB;
+					};
 					231016351D37EE9C0061FADB = {
 						CreatedOnToolsVersion = 7.3.1;
 					};
@@ -238,11 +289,19 @@
 			targets = (
 				231016351D37EE9C0061FADB /* BitLive */,
 				235A710B1D48D5A600E5D105 /* BitLiveTests */,
+				230D06691D49075200820E97 /* BitLiveUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		230D06681D49075200820E97 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		231016341D37EE9C0061FADB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -311,6 +370,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		230D06661D49075200820E97 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				230D066D1D49075200820E97 /* BitLiveUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		231016321D37EE9C0061FADB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -334,6 +401,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		230D06701D49075200820E97 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 231016351D37EE9C0061FADB /* BitLive */;
+			targetProxy = 230D066F1D49075200820E97 /* PBXContainerItemProxy */;
+		};
 		235A71121D48D5A600E5D105 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 231016351D37EE9C0061FADB /* BitLive */;
@@ -361,6 +433,30 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		230D06711D49075200820E97 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = BitLiveUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = AG.BitLiveUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = BitLive;
+			};
+			name = Debug;
+		};
+		230D06721D49075200820E97 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = BitLiveUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = AG.BitLiveUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = BitLive;
+			};
+			name = Release;
+		};
 		231016461D37EE9C0061FADB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -501,6 +597,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		230D06731D49075200820E97 /* Build configuration list for PBXNativeTarget "BitLiveUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				230D06711D49075200820E97 /* Debug */,
+				230D06721D49075200820E97 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		231016311D37EE9C0061FADB /* Build configuration list for PBXProject "BitLive" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
