@@ -2,9 +2,7 @@
 
 ## BitLive
 
-This sample app was created when I received a test challenge to complete. My focus was on details and to avoid reinventing the wheel unless neccessary. I took advantage of 3 mainstream libraries to complete the task and focused my attention to the design and details such as unit/UI testing, color theme, animation for visual appeal and creating a catchy icon.
-
-PS I was not selected to proceed further based on this. Request for additional feedback went unanswered so I'm unable to say why. Note: This repo has evolved since my submission
+BitLive is a simple app that displays Bitcoin's current price as well as a 28 day historic chart in USD, GDP & EUR. It was created when I received a challenge to complete. My focus was on details and to avoid reinventing the wheel unless necessary. I took advantage of 3 mainstream libraries to complete the task and focused my attention to the design and details such as unit/UI testing, color theme, animation for visual appeal and creating a catchy icon.
 
 ## Screenshots
 
