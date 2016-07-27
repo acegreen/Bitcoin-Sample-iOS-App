@@ -2,9 +2,9 @@
 
 ## BitLive
 
-This sample app was created when I received a test challenge to complete. My focus was on details and to avoid reinventing the wheel unless neccessary. I took advantage of 3 mainstream libraries to complete the task and focused my attention to the design and details such as color theme, animating the label the displays current value, creating a catchy icon.
+This sample app was created when I received a test challenge to complete. My focus was on details and to avoid reinventing the wheel unless neccessary. I took advantage of 3 mainstream libraries to complete the task and focused my attention to the design and details such as unit/UI testing, color theme, animation for visual appeal and creating a catchy icon.
 
-PS I was not selected to proceed further based on this. Request for additional feedback went unanswered so I'm unable to say why. '
+PS I was not selected to proceed further based on this. Request for additional feedback went unanswered so I'm unable to say why. Note: This repo has evolved since my submission
 
 ## Screenshots
 
