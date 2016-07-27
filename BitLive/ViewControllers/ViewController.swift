@@ -36,11 +36,11 @@ class ViewController: UIViewController {
         
         selectedSegmentIndex = SegmentIndex(rawValue: sender.selectedSegmentIndex)!
         
-        // Query for current Value and start a timer
-        queryCurrentValue()
+        // Query and Update current Value
+        queryUpdateCurrentValue()
         
-        // Query for historic values
-        queryHistoricValue(weeks: 4)
+        // Query and Update historic values
+        queryUpdateHistoricValues()
     }
     
     var selectedSegmentIndex: SegmentIndex = SegmentIndex(rawValue: 0)!
@@ -60,13 +60,13 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         // Query for current Value and start a timer
-        queryCurrentValue()
+        queryUpdateCurrentValue()
         
         // Starting timer independent of above query
-        self.startTimer(selector: "queryCurrentValue")
+        self.startTimer(selector: "queryUpdateCurrentValue")
         
         // Query for historic values
-        queryHistoricValue(weeks: 4)
+        queryUpdateHistoricValues()
     }
     
     override func didReceiveMemoryWarning() {
@@ -79,7 +79,7 @@ class ViewController: UIViewController {
     
     // MARK: Bitcoin Functions
     
-    func queryCurrentValue() {
+    func queryCurrentValue(completion: (JSON) -> Void) {
         
         let queryLink = "https://api.coindesk.com/v1/bpi/currentprice.json"
         
@@ -87,7 +87,7 @@ class ViewController: UIViewController {
         if let currentValueCacheData = DataCache.defaultCache.readDataForKey("\(queryLink)") {
             
             let bitcoinJSONResults =  JSON(data: currentValueCacheData)
-            self.updateCurrentData(bitcoinJSONResults)
+            completion(bitcoinJSONResults)
 
         }
         
@@ -101,7 +101,8 @@ class ViewController: UIViewController {
                 let bitcoinJSONResults =  JSON(data: bitcoinResults)
                 
                 DataCache.defaultCache.writeData(bitcoinResults, forKey: "\(queryLink)")
-                self.updateCurrentData(bitcoinJSONResults)
+                
+                completion(bitcoinJSONResults)
                 
             } catch {
                 
@@ -110,16 +111,13 @@ class ViewController: UIViewController {
         }
     }
     
-    func queryHistoricValue(weeks weeks: Int) {
-        
-        let formatter: NSDateFormatter = NSDateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd"
+    func queryHistoricValues(weeks weeks: Int, completion: (JSON) -> Void) {
         
         let today = NSDate()
         let daysAgo = dateBySubtractingDays(today, numberOfDays: -(weeks * 7))
         
-        let todayFormatted: String = formatter.stringFromDate(today)
-        let daysAgoFormatted: String = formatter.stringFromDate(daysAgo)
+        let todayFormatted: String = dateFormattedString(today)
+        let daysAgoFormatted: String = dateFormattedString(daysAgo)
         
         let queryLink = "https://api.coindesk.com/v1/bpi/historical/close.json?start=\(daysAgoFormatted)&end=\(todayFormatted)&currency=\(selectedSegmentIndex)"
         
@@ -127,8 +125,8 @@ class ViewController: UIViewController {
         if let historicValuesCacheData = DataCache.defaultCache.readDataForKey("\(queryLink)") {
             
             let bitcoinJSONResults =  JSON(data: historicValuesCacheData)
-            self.updateHistoricData(bitcoinJSONResults)
             
+            completion(bitcoinJSONResults)
         }
         
         // Fetch new data
@@ -141,7 +139,8 @@ class ViewController: UIViewController {
                 let bitcoinJSONResults = JSON(data: bitcoinResults)
                 
                 DataCache.defaultCache.writeData(bitcoinResults, forKey: "\(queryLink)")
-                self.updateHistoricData(bitcoinJSONResults)
+                
+                completion(bitcoinJSONResults)
                 
             } catch {
                 
@@ -150,7 +149,7 @@ class ViewController: UIViewController {
         }
     }
     
-    func updateCurrentData(bitcoinJSONResults: JSON) {
+    func updateCurrentValue(bitcoinJSONResults: JSON) {
         
         let bpi = bitcoinJSONResults["bpi"]
         let currency = bpi["\(selectedSegmentIndex)"]
@@ -198,6 +197,18 @@ class ViewController: UIViewController {
         self.bitcoinChangeLabel.hidden = false
         self.bitcoinChangeLabel.text = "\(currencySymbol) \(difference.roundToPlaces(2)) (\(differentPercent.roundToPlaces(2))%)"
         
+    }
+    
+    func queryUpdateCurrentValue() {
+        queryCurrentValue { (resultsJSON) in
+            self.updateCurrentValue(resultsJSON)
+        }
+    }
+    
+    func queryUpdateHistoricValues() {
+        queryHistoricValues(weeks: 4) { (resultsJSON) in
+            self.updateHistoricData(resultsJSON)
+        }
     }
     
     // MARK: Chart Function
@@ -255,6 +266,14 @@ class ViewController: UIViewController {
     }
     
     // MARK: Helper Functions
+    
+    func dateFormattedString(date: NSDate) -> String {
+        
+        let formatter: NSDateFormatter = NSDateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        
+        return formatter.stringFromDate(date)
+    }
     
     func dateBySubtractingDays(currentDate: NSDate, numberOfDays: Int) -> NSDate {
         let dateComponents = NSDateComponents()
