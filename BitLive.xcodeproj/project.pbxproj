@@ -7,14 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2310163A1D37EE9C0061FADB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231016391D37EE9C0061FADB /* AppDelegate.swift */; };
-		2310163C1D37EE9C0061FADB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2310163B1D37EE9C0061FADB /* ViewController.swift */; };
-		2310163F1D37EE9C0061FADB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2310163D1D37EE9C0061FADB /* Main.storyboard */; };
-		231016411D37EE9C0061FADB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 231016401D37EE9C0061FADB /* Assets.xcassets */; };
-		231016441D37EE9C0061FADB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 231016421D37EE9C0061FADB /* LaunchScreen.storyboard */; };
-		2310164E1D37F84D0061FADB /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2310164D1D37F84D0061FADB /* Extensions.swift */; };
-		231016531D37FFC80061FADB /* QueryHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231016521D37FFC80061FADB /* QueryHelper.swift */; };
-		231016551D38000E0061FADB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231016541D38000E0061FADB /* Constants.swift */; };
+		235A70FF1D48D39B00E5D105 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 235A70F01D48D39B00E5D105 /* Assets.xcassets */; };
+		235A71001D48D39B00E5D105 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235A70F21D48D39B00E5D105 /* AppDelegate.swift */; };
+		235A71011D48D39B00E5D105 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 235A70F31D48D39B00E5D105 /* Info.plist */; };
+		235A71021D48D39B00E5D105 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235A70F51D48D39B00E5D105 /* Constants.swift */; };
+		235A71031D48D39B00E5D105 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235A70F61D48D39B00E5D105 /* Extensions.swift */; };
+		235A71041D48D39B00E5D105 /* QueryHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235A70F71D48D39B00E5D105 /* QueryHelper.swift */; };
+		235A71051D48D39B00E5D105 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 235A70F91D48D39B00E5D105 /* LaunchScreen.storyboard */; };
+		235A71061D48D39B00E5D105 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 235A70FB1D48D39B00E5D105 /* Main.storyboard */; };
+		235A71071D48D39B00E5D105 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235A70FE1D48D39B00E5D105 /* ViewController.swift */; };
 		F0A9E2742F36C9AFA2083F43 /* Pods_BitLive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 180D46B91468489162007934 /* Pods_BitLive.framework */; };
 /* End PBXBuildFile section */
 
@@ -22,15 +23,15 @@
 		1084EB974D38A0158BD8593F /* Pods-BitLive.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BitLive.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BitLive/Pods-BitLive.debug.xcconfig"; sourceTree = "<group>"; };
 		180D46B91468489162007934 /* Pods_BitLive.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BitLive.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		231016361D37EE9C0061FADB /* BitLive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BitLive.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		231016391D37EE9C0061FADB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2310163B1D37EE9C0061FADB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		2310163E1D37EE9C0061FADB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		231016401D37EE9C0061FADB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		231016431D37EE9C0061FADB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		231016451D37EE9C0061FADB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2310164D1D37F84D0061FADB /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		231016521D37FFC80061FADB /* QueryHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryHelper.swift; sourceTree = "<group>"; };
-		231016541D38000E0061FADB /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		235A70F01D48D39B00E5D105 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		235A70F21D48D39B00E5D105 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		235A70F31D48D39B00E5D105 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		235A70F51D48D39B00E5D105 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		235A70F61D48D39B00E5D105 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		235A70F71D48D39B00E5D105 /* QueryHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryHelper.swift; sourceTree = "<group>"; };
+		235A70FA1D48D39B00E5D105 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		235A70FC1D48D39B00E5D105 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		235A70FE1D48D39B00E5D105 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3F6C2AD5FBAE6D78EEACA917 /* Pods-BitLive.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BitLive.release.xcconfig"; path = "Pods/Target Support Files/Pods-BitLive/Pods-BitLive.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -67,33 +68,49 @@
 		231016381D37EE9C0061FADB /* BitLive */ = {
 			isa = PBXGroup;
 			children = (
-				2310164C1D37F8320061FADB /* General */,
-				2310164B1D37EFF20061FADB /* Storyboards */,
-				2310163B1D37EE9C0061FADB /* ViewController.swift */,
-				231016391D37EE9C0061FADB /* AppDelegate.swift */,
-				231016401D37EE9C0061FADB /* Assets.xcassets */,
-				231016451D37EE9C0061FADB /* Info.plist */,
+				235A70F01D48D39B00E5D105 /* Assets.xcassets */,
+				235A70F11D48D39B00E5D105 /* Bundle Files */,
+				235A70F41D48D39B00E5D105 /* Generics */,
+				235A70F81D48D39B00E5D105 /* Storyboards */,
+				235A70FD1D48D39B00E5D105 /* ViewControllers */,
 			);
 			path = BitLive;
 			sourceTree = "<group>";
 		};
-		2310164B1D37EFF20061FADB /* Storyboards */ = {
+		235A70F11D48D39B00E5D105 /* Bundle Files */ = {
 			isa = PBXGroup;
 			children = (
-				2310163D1D37EE9C0061FADB /* Main.storyboard */,
-				231016421D37EE9C0061FADB /* LaunchScreen.storyboard */,
+				235A70F21D48D39B00E5D105 /* AppDelegate.swift */,
+				235A70F31D48D39B00E5D105 /* Info.plist */,
 			);
-			name = Storyboards;
+			path = "Bundle Files";
 			sourceTree = "<group>";
 		};
-		2310164C1D37F8320061FADB /* General */ = {
+		235A70F41D48D39B00E5D105 /* Generics */ = {
 			isa = PBXGroup;
 			children = (
-				231016541D38000E0061FADB /* Constants.swift */,
-				2310164D1D37F84D0061FADB /* Extensions.swift */,
-				231016521D37FFC80061FADB /* QueryHelper.swift */,
+				235A70F51D48D39B00E5D105 /* Constants.swift */,
+				235A70F61D48D39B00E5D105 /* Extensions.swift */,
+				235A70F71D48D39B00E5D105 /* QueryHelper.swift */,
 			);
-			name = General;
+			path = Generics;
+			sourceTree = "<group>";
+		};
+		235A70F81D48D39B00E5D105 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				235A70F91D48D39B00E5D105 /* LaunchScreen.storyboard */,
+				235A70FB1D48D39B00E5D105 /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		235A70FD1D48D39B00E5D105 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				235A70FE1D48D39B00E5D105 /* ViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		704DA8FF2471ACB5AE0A2ECE /* Pods */ = {
@@ -174,9 +191,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				231016441D37EE9C0061FADB /* LaunchScreen.storyboard in Resources */,
-				231016411D37EE9C0061FADB /* Assets.xcassets in Resources */,
-				2310163F1D37EE9C0061FADB /* Main.storyboard in Resources */,
+				235A71051D48D39B00E5D105 /* LaunchScreen.storyboard in Resources */,
+				235A71011D48D39B00E5D105 /* Info.plist in Resources */,
+				235A70FF1D48D39B00E5D105 /* Assets.xcassets in Resources */,
+				235A71061D48D39B00E5D105 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -235,31 +253,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				231016551D38000E0061FADB /* Constants.swift in Sources */,
-				2310163C1D37EE9C0061FADB /* ViewController.swift in Sources */,
-				2310164E1D37F84D0061FADB /* Extensions.swift in Sources */,
-				231016531D37FFC80061FADB /* QueryHelper.swift in Sources */,
-				2310163A1D37EE9C0061FADB /* AppDelegate.swift in Sources */,
+				235A71071D48D39B00E5D105 /* ViewController.swift in Sources */,
+				235A71001D48D39B00E5D105 /* AppDelegate.swift in Sources */,
+				235A71031D48D39B00E5D105 /* Extensions.swift in Sources */,
+				235A71041D48D39B00E5D105 /* QueryHelper.swift in Sources */,
+				235A71021D48D39B00E5D105 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		2310163D1D37EE9C0061FADB /* Main.storyboard */ = {
+		235A70F91D48D39B00E5D105 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				2310163E1D37EE9C0061FADB /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		231016421D37EE9C0061FADB /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				231016431D37EE9C0061FADB /* Base */,
+				235A70FA1D48D39B00E5D105 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		235A70FB1D48D39B00E5D105 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				235A70FC1D48D39B00E5D105 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -353,7 +371,7 @@
 			baseConfigurationReference = 1084EB974D38A0158BD8593F /* Pods-BitLive.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = BitLive/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/BitLive/Bundle Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = AG.BitLive;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -366,7 +384,7 @@
 			baseConfigurationReference = 3F6C2AD5FBAE6D78EEACA917 /* Pods-BitLive.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = BitLive/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/BitLive/Bundle Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = AG.BitLive;
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -12,7 +12,7 @@ iPad                                                                            
 :----------------------------------------------------------------------------------------------------------------:|:----------------------------------------------------------------------------------------------------------------:
 ![alt tag](https://cloud.githubusercontent.com/assets/10794609/17078286/9b2ff3d8-50bc-11e6-8e7f-4a343fd55660.png) | ![alt tag](https://cloud.githubusercontent.com/assets/10794609/17078285/9b2fa1da-50bc-11e6-894e-77aca1918978.png)
 
-## Test
+## Challenge
 
 Thanks for applying at NUMBER26! To get to know your development process a little better, we would like to start things off with a small code challenge. Please read the task below and submit your final solution to us complete with source code and documentation.
 
