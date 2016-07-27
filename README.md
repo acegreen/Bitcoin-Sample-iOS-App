@@ -12,7 +12,7 @@ iPad                                                                            
 
 ## Challenge
 
-Thanks for applying at NUMBER26! To get to know your development process a little better, we would like to start things off with a small code challenge. Please read the task below and submit your final solution to us complete with source code and documentation.
+To get to know your development process a little better, we would like to start things off with a small code challenge. Please read the task below and submit your final solution to us complete with source code and documentation.
 
 You may use any set of technologies you see fit, so long as it completes the desired task appropriately, we don’t want to limit your use of libraries or frameworks, but please remember that it’s your code we want to see!
 
