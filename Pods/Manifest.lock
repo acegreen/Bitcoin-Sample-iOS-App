@@ -2,7 +2,7 @@ PODS:
   - Charts (2.2.5):
     - Charts/Core (= 2.2.5)
   - Charts/Core (2.2.5)
-  - DataCache (1.0)
+  - DataCache (1.1)
   - LTMorphingLabel (0.2.1)
   - SwiftyJSON (2.3.2)
 
@@ -18,12 +18,12 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   DataCache:
-    :commit: 1addcc76a98cdda6ff4b64630397a4c289f77349
+    :commit: d7defe7c3921e4f72860849fd6f45b87f96eea31
     :git: https://github.com/huynguyencong/DataCache.git
 
 SPEC CHECKSUMS:
   Charts: b48fcc8d7190de910ff9e9748f5360c8ea7856e5
-  DataCache: d9dc2b3f77dca0067c93bd481a1a10b9d60d0b1d
+  DataCache: 0acf603ad1865736507f3ab8dc09302f7a774d45
   LTMorphingLabel: 1858358ea38ef4d548e1f58b648b0d08ec3a62ed
   SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
 

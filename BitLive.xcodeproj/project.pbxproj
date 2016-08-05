@@ -38,7 +38,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1084EB974D38A0158BD8593F /* Pods-BitLive.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BitLive.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BitLive/Pods-BitLive.debug.xcconfig"; sourceTree = "<group>"; };
 		180D46B91468489162007934 /* Pods_BitLive.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BitLive.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		230D066A1D49075200820E97 /* BitLiveUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BitLiveUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		230D066C1D49075200820E97 /* BitLiveUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitLiveUITests.swift; sourceTree = "<group>"; };
@@ -58,6 +57,7 @@
 		235A71101D48D5A600E5D105 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F6C2AD5FBAE6D78EEACA917 /* Pods-BitLive.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BitLive.release.xcconfig"; path = "Pods/Target Support Files/Pods-BitLive/Pods-BitLive.release.xcconfig"; sourceTree = "<group>"; };
 		7E3247CDD18DB50F08DC4FDE /* Pods_BitLiveTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BitLiveTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E21E7503C025B759BD9EA057 /* Pods-BitLive.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BitLive.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BitLive/Pods-BitLive.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,8 +177,8 @@
 		704DA8FF2471ACB5AE0A2ECE /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				1084EB974D38A0158BD8593F /* Pods-BitLive.debug.xcconfig */,
 				3F6C2AD5FBAE6D78EEACA917 /* Pods-BitLive.release.xcconfig */,
+				E21E7503C025B759BD9EA057 /* Pods-BitLive.debug.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -542,7 +542,7 @@
 		};
 		231016491D37EE9C0061FADB /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1084EB974D38A0158BD8593F /* Pods-BitLive.debug.xcconfig */;
+			baseConfigurationReference = E21E7503C025B759BD9EA057 /* Pods-BitLive.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ENABLE_TESTABILITY = YES;
@@ -570,7 +570,6 @@
 		};
 		235A71141D48D5A600E5D105 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1084EB974D38A0158BD8593F /* Pods-BitLive.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = BitLiveTests/Info.plist;
@@ -583,7 +582,6 @@
 		};
 		235A71151D48D5A600E5D105 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1084EB974D38A0158BD8593F /* Pods-BitLive.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = BitLiveTests/Info.plist;
@@ -604,6 +602,7 @@
 				230D06721D49075200820E97 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		231016311D37EE9C0061FADB /* Build configuration list for PBXProject "BitLive" */ = {
 			isa = XCConfigurationList;

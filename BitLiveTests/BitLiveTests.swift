@@ -70,21 +70,12 @@ class BitLiveTests: XCTestCase {
     
     func testHistoricValuesChartUpdatingPerformance() {
 
-        let expectation: XCTestExpectation = self.expectationWithDescription("QueryHistoricValues Expectation")
         viewController.queryHistoricValues(weeks: 4) { (resultsJSON) in
-            
-            // Assert results are not empty and no error
-            XCTAssertNil(resultsJSON.error, "Query error")
-            XCTAssertNotNil(resultsJSON, "Query results came back empty")
             
             // Measure performance of charting
             self.measureBlock {
                 self.viewController.updateHistoricData(resultsJSON)
             }
-            
-            expectation.fulfill()
         }
-        
-        waitForExpectationsWithTimeout(5.0, handler:nil)
     }
 }
