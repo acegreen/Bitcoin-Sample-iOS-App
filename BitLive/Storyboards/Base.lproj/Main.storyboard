@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11521.1" systemVersion="16A319" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11517.1"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -23,19 +24,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bitcoin" translatesAutoresizingMaskIntoConstraints="NO" id="IRk-sS-QNy"/>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bitcoin Value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Olu-Ui-xhO">
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="22"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bitcoin_large" translatesAutoresizingMaskIntoConstraints="NO" id="IRk-sS-QNy">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="RYR-SG-he0"/>
+                                    <constraint firstAttribute="width" secondItem="IRk-sS-QNy" secondAttribute="height" multiplier="1:1" id="gR1-hv-bDP"/>
+                                </constraints>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$ 000.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H8H-84-Dqo" customClass="LTMorphingLabel" customModule="LTMorphingLabel">
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="40"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="50"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$ 0.00 (0.00%)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yri-Xc-w0g">
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="25"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -60,9 +61,7 @@
                         <color key="backgroundColor" red="0.96078431610000004" green="0.75294119120000003" blue="0.094117648900000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="OSt-Zj-h2n" secondAttribute="bottom" id="8dN-lB-WrD"/>
-                            <constraint firstItem="H8H-84-Dqo" firstAttribute="top" secondItem="Olu-Ui-xhO" secondAttribute="bottom" constant="10" id="C0P-3l-OMz"/>
                             <constraint firstItem="yri-Xc-w0g" firstAttribute="top" secondItem="H8H-84-Dqo" secondAttribute="bottom" constant="5" id="DB3-UX-H9y"/>
-                            <constraint firstItem="Olu-Ui-xhO" firstAttribute="top" secondItem="IRk-sS-QNy" secondAttribute="bottom" constant="25" id="LqY-U8-zyp"/>
                             <constraint firstItem="yri-Xc-w0g" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="MeW-32-NiN"/>
                             <constraint firstAttribute="trailing" secondItem="OSt-Zj-h2n" secondAttribute="trailing" id="O7D-Ix-6Nd"/>
                             <constraint firstItem="H8H-84-Dqo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="S7t-vq-D67"/>
@@ -70,8 +69,8 @@
                             <constraint firstItem="IRk-sS-QNy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="e0t-Y0-KAA"/>
                             <constraint firstItem="OSt-Zj-h2n" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="kw1-Xh-RoL"/>
                             <constraint firstItem="kjW-SC-GiQ" firstAttribute="top" secondItem="yri-Xc-w0g" secondAttribute="bottom" constant="45" id="lsG-rM-ja8"/>
+                            <constraint firstItem="H8H-84-Dqo" firstAttribute="top" secondItem="IRk-sS-QNy" secondAttribute="bottom" constant="25" id="mjC-It-7vd"/>
                             <constraint firstItem="OSt-Zj-h2n" firstAttribute="top" secondItem="kjW-SC-GiQ" secondAttribute="bottom" constant="25" id="sTt-lr-czf"/>
-                            <constraint firstItem="Olu-Ui-xhO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="v2s-yM-TKh"/>
                             <constraint firstItem="IRk-sS-QNy" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="25" id="wtC-7s-SUl"/>
                         </constraints>
                     </view>
@@ -86,7 +85,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="bitcoin" width="37" height="37"/>
+        <image name="bitcoin_large" width="150" height="150"/>
     </resources>
     <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
