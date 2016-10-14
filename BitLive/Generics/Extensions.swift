@@ -9,9 +9,9 @@
 import UIKit
 import Foundation
 
-extension CollectionType {
-    func find(@noescape predicate: (Self.Generator.Element) throws -> Bool) rethrows -> Self.Generator.Element? {
-        return try indexOf(predicate).map({self[$0]})
+extension Collection {
+    func find(_ predicate: (Self.Iterator.Element) throws -> Bool) rethrows -> Self.Iterator.Element? {
+        return try index(where: predicate).map({self[$0]})
     }
 }
 
@@ -19,7 +19,7 @@ extension Array {
     
     // Safely lookup an index that might be out of bounds,
     // returning nil if it does not exist
-    func get(index: Int) -> Element? {
+    func get(_ index: Int) -> Element? {
         if 0 <= index && index < count {
             return self[index]
         } else {
@@ -28,12 +28,12 @@ extension Array {
     }
     
     mutating func moveItem(fromIndex oldIndex: Index, toIndex newIndex: Index) {
-        insert(removeAtIndex(oldIndex), atIndex: newIndex)
+        insert(remove(at: oldIndex), at: newIndex)
     }
     
-    func reduceWithIndex<T>(initial: T, @noescape combine: (T, Int, Array.Generator.Element) throws -> T) rethrows -> T {
+    func reduceWithIndex<T>(_ initial: T, combine: (T, Int, Array.Iterator.Element) throws -> T) rethrows -> T {
         var result = initial
-        for (index, element) in self.enumerate() {
+        for (index, element) in self.enumerated() {
             result = try combine(result, index, element)
         }
         return result
@@ -42,13 +42,13 @@ extension Array {
 
 extension Array where Element: Equatable {
     
-    mutating func removeObject(object: Element) {
-        if let index = self.indexOf(object) {
-            self.removeAtIndex(index)
+    mutating func removeObject(_ object: Element) {
+        if let index = self.index(of: object) {
+            self.remove(at: index)
         }
     }
     
-    mutating func removeObjectsInArray(array: [Element]) {
+    mutating func removeObjectsInArray(_ array: [Element]) {
         for object in array {
             self.removeObject(object)
         }
@@ -79,26 +79,27 @@ extension Int {
 }
 
 extension Double {
-
-    func roundToPlaces(places:Int) -> Double {
+    
+    /// Rounds the double to decimal places value
+    func roundTo(places:Int) -> Double {
         let divisor = pow(10.0, Double(places))
-        return round(self * divisor) / divisor
+        return (self * divisor).rounded() / divisor
     }
 }
 
 extension String {
     
     func URLEncodedString() -> String? {
-        let escapedString = self.stringByAddingPercentEncodingWithAllowedCharacters(.URLQueryAllowedCharacterSet())
+        let escapedString = self.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
         return escapedString
     }
     
     func decodeEncodedString() -> String? {
         
-        let encodedData = self.dataUsingEncoding(NSUTF8StringEncoding)!
+        let encodedData = self.data(using: String.Encoding.utf8)!
         let attributedOptions : [String: AnyObject] = [
-            NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType,
-            NSCharacterEncodingDocumentAttribute: NSUTF8StringEncoding
+            NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType as AnyObject,
+            NSCharacterEncodingDocumentAttribute: String.Encoding.utf8 as AnyObject
         ]
         
         do {
@@ -116,9 +117,9 @@ extension String {
         }
     }
     
-    func replace(target: String, withString: String) -> String {
+    func replace(_ target: String, withString: String) -> String {
         
-        return self.stringByReplacingOccurrencesOfString(target, withString: withString, options: NSStringCompareOptions.LiteralSearch, range: nil)
+        return self.replacingOccurrences(of: target, with: withString, options: NSString.CompareOptions.literal, range: nil)
     }
 }
 
@@ -148,14 +149,14 @@ extension UIView {
             return self.borderColor
         }
         set {
-            layer.borderColor = newValue?.CGColor
+            layer.borderColor = newValue?.cgColor
         }
     }
     
     func imageFromLayer() -> UIImage {
         UIGraphicsBeginImageContextWithOptions(self.bounds.size, false, 0)
-        self.layer.renderInContext(UIGraphicsGetCurrentContext()!)
-        let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()
+        self.layer.render(in: UIGraphicsGetCurrentContext()!)
+        let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
         return image
     }
@@ -163,33 +164,33 @@ extension UIView {
 
 extension UISegmentedControl {
     
-    func insertSegmentWithMultilineTitle(title: String, atIndex segment: Int, animated: Bool) {
+    func insertSegmentWithMultilineTitle(_ title: String, atIndex segment: Int, animated: Bool) {
         let label: UILabel = UILabel()
         label.text = title
         label.textColor = self.tintColor
-        label.backgroundColor = UIColor.clearColor()
-        label.textAlignment = .Center
-        label.lineBreakMode = .ByWordWrapping
+        label.backgroundColor = UIColor.clear
+        label.textAlignment = .center
+        label.lineBreakMode = .byWordWrapping
         label.numberOfLines = 0
         label.sizeToFit()
-        self.insertSegmentWithImage(label.imageFromLayer(), atIndex: segment, animated: animated)
+        self.insertSegment(with: label.imageFromLayer(), at: segment, animated: animated)
     }
     
-    func insertSegmentWithMultilineAttributedTitle(attributedTitle: NSAttributedString, atIndex segment: Int, animated: Bool) {
+    func insertSegmentWithMultilineAttributedTitle(_ attributedTitle: NSAttributedString, atIndex segment: Int, animated: Bool) {
         let label: UILabel = UILabel()
         label.attributedText = attributedTitle
         label.numberOfLines = 0
         label.sizeToFit()
-        self.insertSegmentWithImage(label.imageFromLayer(), atIndex: segment, animated: animated)
+        self.insertSegment(with: label.imageFromLayer(), at: segment, animated: animated)
     }
     
-    func segmentWithMultilineAttributedTitle(attributedTitle: NSAttributedString, atIndex segment: Int, animated: Bool) {
+    func segmentWithMultilineAttributedTitle(_ attributedTitle: NSAttributedString, atIndex segment: Int, animated: Bool) {
         let label: UILabel = UILabel()
         label.attributedText = attributedTitle
         label.numberOfLines = 0
         label.sizeToFit()
         
-        self.setImage(label.imageFromLayer(), forSegmentAtIndex: segment)
+        self.setImage(label.imageFromLayer(), forSegmentAt: segment)
     }
 }
 
@@ -203,7 +204,7 @@ extension UIColor {
         self.init(red: newRed, green: newGreen, blue: newBlue, alpha: 1.0)
     }
     
-    class func colorFromRGB(rgbValue: UInt) -> UIColor {
+    class func colorFromRGB(_ rgbValue: UInt) -> UIColor {
         return UIColor(
             red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
             green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
@@ -213,13 +214,13 @@ extension UIColor {
     }
 }
 
-extension NSURL {
+extension URL {
     
     var fragments: [String: String] {
         var results = [String: String]()
-        if let pairs = self.fragment?.componentsSeparatedByString("&") where pairs.count > 0 {
+        if let pairs = self.fragment?.components(separatedBy: "&") , pairs.count > 0 {
             for pair: String in pairs {
-                if let keyValue = pair.componentsSeparatedByString("=") as [String]? {
+                if let keyValue = pair.components(separatedBy: "=") as [String]? {
                     results.updateValue(keyValue[1], forKey: keyValue[0])
                 }
             }
@@ -227,21 +228,21 @@ extension NSURL {
         return results
     }
     
-    func parseQueryString (urlQuery: String, firstSeperator: String, secondSeperator: String) -> NSDictionary? {
+    func parseQueryString (_ urlQuery: String, firstSeperator: String, secondSeperator: String) -> NSDictionary? {
         
         let dict: NSMutableDictionary = NSMutableDictionary()
         
-        let pairs = urlQuery.componentsSeparatedByString(firstSeperator)
+        let pairs = urlQuery.components(separatedBy: firstSeperator)
         
         for pair in pairs {
             
-            let elements: NSArray = pair.componentsSeparatedByString(secondSeperator)
+            let elements: [String] = pair.components(separatedBy: secondSeperator)
             
-            guard let key = elements.objectAtIndex(0).stringByRemovingPercentEncoding,
-                let value = elements.objectAtIndex(1).stringByRemovingPercentEncoding
+            guard let key = (elements[0]).removingPercentEncoding,
+                let value = (elements[1]).removingPercentEncoding
                 else { return dict }
             
-            dict.setObject(value!, forKey: key!)
+            dict.setObject(value, forKey: key as NSCopying)
         }
         
         return dict
@@ -262,10 +263,10 @@ extension UIImage {
     
     convenience init(view: UIView) {
         UIGraphicsBeginImageContext(view.frame.size)
-        view.layer.renderInContext(UIGraphicsGetCurrentContext()!)
+        view.layer.render(in: UIGraphicsGetCurrentContext()!)
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-        self.init(CGImage: image.CGImage!)
+        self.init(cgImage: (image?.cgImage!)!)
     }
     
     var rounded: UIImage {
@@ -273,38 +274,38 @@ extension UIImage {
         imageView.layer.cornerRadius = size.height < size.width ? size.height/2 : size.width/2
         imageView.layer.masksToBounds = true
         UIGraphicsBeginImageContext(imageView.bounds.size)
-        imageView.layer.renderInContext(UIGraphicsGetCurrentContext()!)
+        imageView.layer.render(in: UIGraphicsGetCurrentContext()!)
         let result = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-        return result
+        return result!
     }
     
     var circle: UIImage {
         let square = size.width < size.height ? CGSize(width: size.width, height: size.width) : CGSize(width: size.height, height: size.height)
         let imageView = UIImageView(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: square))
-        imageView.contentMode = UIViewContentMode.ScaleAspectFill
+        imageView.contentMode = UIViewContentMode.scaleAspectFill
         imageView.image = self
         imageView.layer.cornerRadius = square.width/2
         imageView.layer.masksToBounds = true
         UIGraphicsBeginImageContext(imageView.bounds.size)
-        imageView.layer.renderInContext(UIGraphicsGetCurrentContext()!)
+        imageView.layer.render(in: UIGraphicsGetCurrentContext()!)
         let result = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-        return result
+        return result!
     }
 }
 
 extension UIViewController {
     func isBeingPresentedInFormSheet() -> Bool {
         if let presentingViewController = presentingViewController {
-            return traitCollection.horizontalSizeClass == .Compact && presentingViewController.traitCollection.horizontalSizeClass == .Regular
+            return traitCollection.horizontalSizeClass == .compact && presentingViewController.traitCollection.horizontalSizeClass == .regular
         }
         return false
     }
 }
 
 extension UIApplication {
-    class func topViewController(base: UIViewController? = UIApplication.sharedApplication().keyWindow?.rootViewController) -> UIViewController? {
+    class func topViewController(_ base: UIViewController? = UIApplication.shared.keyWindow?.rootViewController) -> UIViewController? {
         if let nav = base as? UINavigationController {
             return topViewController(nav.visibleViewController)
         }

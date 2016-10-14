@@ -8,25 +8,25 @@
 
 import UIKit
 
-public class QueryHelper {
+open class QueryHelper {
     
     static let sharedInstance = QueryHelper()
     
-    public func queryWith(queryString: String, completionHandler: (result: () throws -> NSData) -> Void) -> Void {
+    open func queryWith(_ queryString: String, completionHandler: @escaping (_ result: () throws -> Data) -> Void) -> Void {
         
-        if let queryUrl: NSURL = NSURL(string: queryString) {
+        if let queryUrl: URL = URL(string: queryString) {
             
-            let session = NSURLSession.sharedSession()
+            let session = URLSession.shared
             
-            let task = session.dataTaskWithURL(queryUrl, completionHandler: { (queryData, response, error) -> Void in
+            let task = session.dataTask(with: queryUrl, completionHandler: { (queryData, response, error) -> Void in
                 
-                guard error == nil else { return completionHandler(result: {throw Constants.Errors.ErrorQueryingForData}) }
+                guard error == nil else { return completionHandler({throw Constants.Errors.errorQueryingForData}) }
                 
                 guard queryData != nil, let queryData = queryData else {
-                    return completionHandler(result: {throw Constants.Errors.QueryDataEmpty})
+                    return completionHandler({throw Constants.Errors.queryDataEmpty})
                 }
                 
-                return completionHandler(result: { queryData })
+                return completionHandler({ queryData })
             })
             task.resume()
         }

@@ -32,7 +32,7 @@ class ViewController: UIViewController {
     
     @IBOutlet var bitcoinChartView: LineChartView!
     
-    @IBAction func currencySegmentedControl(sender: AnyObject) {
+    @IBAction func currencySegmentedControl(_ sender: AnyObject) {
         
         selectedSegmentIndex = SegmentIndex(rawValue: sender.selectedSegmentIndex)!
         
@@ -63,7 +63,7 @@ class ViewController: UIViewController {
         queryUpdateCurrentValue()
         
         // Starting timer independent of above query
-        self.startTimer(selector: "queryUpdateCurrentValue")
+        self.startTimer("queryUpdateCurrentValue")
         
         // Query for historic values
         queryUpdateHistoricValues()
@@ -73,22 +73,21 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
-    override func preferredStatusBarStyle() -> UIStatusBarStyle {
-        return UIStatusBarStyle.LightContent
+    override var preferredStatusBarStyle : UIStatusBarStyle {
+        return UIStatusBarStyle.lightContent
     }
     
     // MARK: Bitcoin Functions
     
-    func queryCurrentValue(completion: (JSON) -> Void) {
+    func queryCurrentValue(_ completion: @escaping (JSON) -> Void) {
         
         let queryLink = "https://api.coindesk.com/v1/bpi/currentprice.json"
         
         // Load from cache first
-        if let currentValueCacheData = DataCache.defaultCache.readDataForKey("\(queryLink)") {
+        if let currentValueCacheData = DataCache.instance.readData(forKey: "\(queryLink)") {
             
             let bitcoinJSONResults =  JSON(data: currentValueCacheData)
             completion(bitcoinJSONResults)
-
         }
         
         // Fetch new data
@@ -98,9 +97,9 @@ class ViewController: UIViewController {
                 
                 let bitcoinResults = try result()
                 
-                let bitcoinJSONResults =  JSON(data: bitcoinResults)
+                let bitcoinJSONResults = JSON(data: bitcoinResults)
                 
-                DataCache.defaultCache.writeData(bitcoinResults, forKey: "\(queryLink)")
+                DataCache.instance.write(data: bitcoinResults, forKey: "\(queryLink)")
                 
                 completion(bitcoinJSONResults)
                 
@@ -111,9 +110,9 @@ class ViewController: UIViewController {
         }
     }
     
-    func queryHistoricValues(weeks weeks: Int, completion: (JSON) -> Void) {
+    func queryHistoricValues(_ weeks: Int, completion: @escaping (JSON) -> Void) {
         
-        let today = NSDate()
+        let today = Date()
         let daysAgo = dateBySubtractingDays(today, numberOfDays: -(weeks * 7))
         
         let todayFormatted: String = dateFormattedString(today)
@@ -122,7 +121,7 @@ class ViewController: UIViewController {
         let queryLink = "https://api.coindesk.com/v1/bpi/historical/close.json?start=\(daysAgoFormatted)&end=\(todayFormatted)&currency=\(selectedSegmentIndex)"
         
         // Load from cache first
-        if let historicValuesCacheData = DataCache.defaultCache.readDataForKey("\(queryLink)") {
+        if let historicValuesCacheData = DataCache.instance.readData(forKey:"\(queryLink)") {
             
             let bitcoinJSONResults =  JSON(data: historicValuesCacheData)
             
@@ -138,7 +137,7 @@ class ViewController: UIViewController {
                 
                 let bitcoinJSONResults = JSON(data: bitcoinResults)
                 
-                DataCache.defaultCache.writeData(bitcoinResults, forKey: "\(queryLink)")
+                DataCache.instance.write(data: bitcoinResults, forKey: "\(queryLink)")
                 
                 completion(bitcoinJSONResults)
                 
@@ -149,33 +148,37 @@ class ViewController: UIViewController {
         }
     }
     
-    func updateCurrentValue(bitcoinJSONResults: JSON) {
+    func updateCurrentValue(from bitcoinJSONResults: JSON) {
+        
+        print(bitcoinJSONResults)
         
         let bpi = bitcoinJSONResults["bpi"]
         let currency = bpi["\(selectedSegmentIndex)"]
         let currencySymbol = getCurrencySymbol()
-        let rate = currency["rate"]
+        var rate = currency["rate"]
         
-        dispatch_async(dispatch_get_main_queue(), { () -> Void in
-            self.bitcoinValueLabel.text = "\(currencySymbol) \(rate.doubleValue.roundToPlaces(2))"
-            self.currentValue = rate.doubleValue.roundToPlaces(2)
+        DispatchQueue.main.async(execute: { () -> Void in
+            self.bitcoinValueLabel.text = "\(currencySymbol) \(rate.doubleValue.roundTo(places: 2))"
+            self.currentValue = rate.doubleValue.roundTo(places: 2)
         })
     }
     
-    func updateHistoricData(bitcoinJSONResults: JSON) {
+    func updateHistoricData(from bitcoinJSONResults: JSON) {
+        
+        //print(bitcoinJSONResults)
         
         let bpi = bitcoinJSONResults["bpi"]
-        let bpiSorted = bpi.sort { $0.0 < $1.0 }
+        let bpiSorted = bpi.sorted { $0.0 < $1.0 }
         
         var xValues = [String]()
         var yValues = [Double]()
         
-        for (key, value) in bpiSorted {
+        for (key, var value) in bpiSorted {
             xValues.append(key)
-            yValues.append(value.doubleValue.roundToPlaces(2))
+            yValues.append(value.doubleValue.roundTo(places: 2))
         }
         
-        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+        DispatchQueue.main.async(execute: { () -> Void in
             self.setChart(xValues, values: yValues)
             
             if let lastValue = yValues.last {
@@ -185,35 +188,35 @@ class ViewController: UIViewController {
         })
     }
     
-    func updateChangeValue(yesterdaysValue: Double?, todaysValue: Double?) {
+    func updateChangeValue(_ yesterdaysValue: Double?, todaysValue: Double?) {
         
         guard let yesterdaysValue = yesterdaysValue, let todaysValue = todaysValue else  { return }
         
-        let difference = todaysValue - yesterdaysValue
-        let differentPercent = (difference / yesterdaysValue) * 100
+        var difference = todaysValue - yesterdaysValue
+        var differentPercent = (difference / yesterdaysValue) * 100
         
         let currencySymbol = getCurrencySymbol()
         
-        self.bitcoinChangeLabel.hidden = false
-        self.bitcoinChangeLabel.text = "\(currencySymbol) \(difference.roundToPlaces(2)) (\(differentPercent.roundToPlaces(2))%)"
+        self.bitcoinChangeLabel.isHidden = false
+        self.bitcoinChangeLabel.text = "\(currencySymbol) \(difference.roundTo(places: 2)) (\(differentPercent.roundTo(places: 2))%)"
         
     }
     
     func queryUpdateCurrentValue() {
         queryCurrentValue { (resultsJSON) in
-            self.updateCurrentValue(resultsJSON)
+            self.updateCurrentValue(from: resultsJSON)
         }
     }
     
     func queryUpdateHistoricValues() {
-        queryHistoricValues(weeks: 4) { (resultsJSON) in
-            self.updateHistoricData(resultsJSON)
+        queryHistoricValues(4) { (resultsJSON) in
+            self.updateHistoricData(from: resultsJSON)
         }
     }
     
     // MARK: Chart Function
     
-    func setChart(dataPoints: [String], values: [Double]) {
+    func setChart(_ dataPoints: [String], values: [Double]) {
         
         if let _ = values.find ({ $0 > 1 }) {
             
@@ -226,23 +229,23 @@ class ViewController: UIViewController {
             
             let lineDataSet = LineChartDataSet(yVals: yValues, label: nil)
             lineDataSet.drawValuesEnabled = false
-            lineDataSet.axisDependency = .Left
-            lineDataSet.setColor(UIColor.whiteColor())
-            lineDataSet.setCircleColor(UIColor.whiteColor())
+            lineDataSet.axisDependency = .left
+            lineDataSet.setColor(UIColor.white)
+            lineDataSet.setCircleColor(UIColor.white)
             lineDataSet.lineWidth = 3.0
             
             lineDataSet.drawCirclesEnabled = false
-            //            lineDataSet.circleRadius = 6.0
+//            lineDataSet.circleRadius = 6.0
             lineDataSet.fillAlpha = 65 / 255.0
             lineDataSet.fillColor = Constants.goldColor
-            lineDataSet.highlightColor = UIColor.whiteColor()
+            lineDataSet.highlightColor = UIColor.white
             lineDataSet.drawCircleHoleEnabled = true
             
             var chartDataSet: [LineChartDataSet] = [LineChartDataSet]()
             chartDataSet.append(lineDataSet)
             
-            let marker: BalloonMarker = BalloonMarker(color: UIColor.whiteColor(), font: UIFont.systemFontOfSize(12.0), insets: UIEdgeInsetsMake(8.0, 8.0, 20.0, 8.0))
-            marker.minimumSize = CGSizeMake(40.0, 40.0)
+            let marker: BalloonMarker = BalloonMarker(color: UIColor.white, font: UIFont.systemFont(ofSize: 12.0), insets: UIEdgeInsetsMake(8.0, 8.0, 20.0, 8.0))
+            marker.minimumSize = CGSize(width: 40.0, height: 40.0)
             
             bitcoinChartView.descriptionText = ""
             bitcoinChartView.xAxis.enabled = false
@@ -261,31 +264,30 @@ class ViewController: UIViewController {
             
             bitcoinChartView.animate(xAxisDuration: 1.0, yAxisDuration: 0)
         } else {
-            bitcoinChartView.hidden = true
+            bitcoinChartView.isHidden = true
         }
     }
     
     // MARK: Helper Functions
     
-    func dateFormattedString(date: NSDate) -> String {
+    func dateFormattedString(_ date: Date) -> String {
         
-        let formatter: NSDateFormatter = NSDateFormatter()
+        let formatter: DateFormatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
         
-        return formatter.stringFromDate(date)
+        return formatter.string(from: date)
     }
     
-    func dateBySubtractingDays(currentDate: NSDate, numberOfDays: Int) -> NSDate {
-        let dateComponents = NSDateComponents()
+    func dateBySubtractingDays(_ currentDate: Date, numberOfDays: Int) -> Date {
+        var dateComponents = DateComponents()
         dateComponents.day = numberOfDays
-        return NSCalendar.currentCalendar().dateByAddingUnit(.Day, value: numberOfDays, toDate: currentDate, options: NSCalendarOptions(rawValue: 0))!
+        return (Calendar.current as NSCalendar).date(byAdding: .day, value: numberOfDays, to: currentDate, options: NSCalendar.Options(rawValue: 0))!
     }
     
-    func startTimer(selector selector: String) {
+    func startTimer(_ selector: String) {
         
         // Note: As per docs, XBP is updated every 60 seconds
-        NSTimer.scheduledTimerWithTimeInterval(60, target: self, selector: Selector(selector), userInfo: nil, repeats: true)
-        
+        Timer.scheduledTimer(timeInterval: 60, target: self, selector: Selector(selector), userInfo: nil, repeats: true)
     }
     
     func getCurrencySymbol() -> String {

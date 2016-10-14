@@ -4,8 +4,8 @@
 use_frameworks!
 
 target 'BitLive' do
-    pod 'Charts'
+    pod 'Charts', :git => 'https://github.com/danielgindi/Charts.git', :branch => 'Chart2.2.5-Swift3.0'
     pod 'SwiftyJSON'
-    pod 'LTMorphingLabel'
-    pod 'DataCache', :git => 'https://github.com/huynguyencong/DataCache.git'
+    pod 'LTMorphingLabel’, :git => 'https://github.com/lexrus/LTMorphingLabel.git', :branch => 'swift3'
+     pod 'DataCache', :git => 'https://github.com/huynguyencong/DataCache.git'
 end

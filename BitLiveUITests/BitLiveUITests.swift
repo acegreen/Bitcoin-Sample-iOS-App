@@ -36,11 +36,11 @@ class BitLiveUITests: XCTestCase {
         app.buttons["EUR"].tap()
         app.buttons["USD"].tap()
         
-        let element = XCUIApplication().otherElements.childrenMatchingType(.Other).elementBoundByIndex(1)
-        element.pressForDuration(1.0)
+        let element = XCUIApplication().otherElements.children(matching: .other).element(boundBy: 1)
+        element.press(forDuration: 1.0)
         element.swipeLeft()
-        NSThread.sleepForTimeInterval(1.0)
+        Thread.sleep(forTimeInterval: 1.0)
         element.swipeRight()
-        NSThread.sleepForTimeInterval(1.0)
+        Thread.sleep(forTimeInterval: 1.0)
     }
 }

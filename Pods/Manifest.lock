@@ -2,31 +2,43 @@ PODS:
   - Charts (2.2.5):
     - Charts/Core (= 2.2.5)
   - Charts/Core (2.2.5)
-  - DataCache (1.1)
-  - LTMorphingLabel (0.2.1)
-  - SwiftyJSON (2.3.2)
+  - DataCache (1.2.2)
+  - LTMorphingLabel (0.3.0)
+  - SwiftyJSON (3.1.1)
 
 DEPENDENCIES:
-  - Charts
+  - Charts (from `https://github.com/danielgindi/Charts.git`, branch `Chart2.2.5-Swift3.0`)
   - DataCache (from `https://github.com/huynguyencong/DataCache.git`)
-  - LTMorphingLabel
+  - LTMorphingLabel (from `https://github.com/lexrus/LTMorphingLabel.git`, branch `swift3`)
   - SwiftyJSON
 
 EXTERNAL SOURCES:
+  Charts:
+    :branch: Chart2.2.5-Swift3.0
+    :git: https://github.com/danielgindi/Charts.git
   DataCache:
     :git: https://github.com/huynguyencong/DataCache.git
+  LTMorphingLabel:
+    :branch: swift3
+    :git: https://github.com/lexrus/LTMorphingLabel.git
 
 CHECKOUT OPTIONS:
+  Charts:
+    :commit: ab3bb619df2c2d165b41736b6bc25a4218833252
+    :git: https://github.com/danielgindi/Charts.git
   DataCache:
-    :commit: d7defe7c3921e4f72860849fd6f45b87f96eea31
+    :commit: 494bff94a77fd9f0ba23cc7f9f1d646142f6cf95
     :git: https://github.com/huynguyencong/DataCache.git
+  LTMorphingLabel:
+    :commit: 93c60bb1626aa96dbd5e899c82e280d7a785315d
+    :git: https://github.com/lexrus/LTMorphingLabel.git
 
 SPEC CHECKSUMS:
   Charts: b48fcc8d7190de910ff9e9748f5360c8ea7856e5
-  DataCache: 0acf603ad1865736507f3ab8dc09302f7a774d45
-  LTMorphingLabel: 1858358ea38ef4d548e1f58b648b0d08ec3a62ed
-  SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
+  DataCache: aab67eb89877e40e4d56f345a160d10b6f3f80ac
+  LTMorphingLabel: 2777d8d9cb699125f48dfcd95d78bd3d77c87ade
+  SwiftyJSON: f0be2e604f83e8405a624e9f891898bf6ed4e019
 
-PODFILE CHECKSUM: 5f99559ed43d1cb7911eb052532e0d63dfad7982
+PODFILE CHECKSUM: b645c907518e303cdd73e26f45c818023e4fd697
 
-COCOAPODS: 1.1.0.beta.1
+COCOAPODS: 1.1.0.rc.3

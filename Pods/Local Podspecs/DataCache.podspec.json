@@ -1,6 +1,6 @@
 {
   "name": "DataCache",
-  "version": "1.1",
+  "version": "1.2.2",
   "summary": "Simplest way to cache data on memory and disk",
   "homepage": "https://github.com/huynguyencong/DataCache",
   "license": {
@@ -9,7 +9,7 @@
   },
   "source": {
     "git": "https://github.com/huynguyencong/DataCache.git",
-    "tag": "1.1"
+    "tag": "1.2.2"
   },
   "authors": {
     "Huy Nguyen Cong": "https://github.com/huynguyencong"
